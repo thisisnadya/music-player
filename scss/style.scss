@@ -1,0 +1,103 @@
+body {
+    background-image: linear-gradient(#71DFE7, #C2FFF9);
+}
+.music-container {
+    min-height: 100vh;
+    overflow: hidden;
+    .card {
+        box-shadow: 0 20px 18px 0 rgba(0, 157, 174, 1);
+        width: 320px;
+        margin: auto;
+        margin-top: 40px;
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img {
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+
+                animation: rotate 3s linear infinite;
+
+                animation-play-state: paused;
+            }
+            &::after {
+                content: '';
+                background-color: white;
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                left: 50%;
+                bottom: 50%;
+                border-radius: 50%;
+                transform: translate(-50%, 50%);
+            }
+        }
+        .card-body {
+            .song-information {
+                .progress-line {
+                    background-color: #D4ECDD;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin: 30px 0px 10px 0px;
+                    height: 5px;
+                    width: 100%;
+                    .progress {
+                        background-color: #1DB9C3;
+                        border-radius: 5px;
+                        height: 100%;
+                        width: 0%;
+                        transition: width 0.1s linear;
+                    }
+                }
+            }
+            .action-button {
+                display: flex;
+                margin: 50px auto 30px auto;
+                justify-content: center;
+                align-items: center;
+                .action-btn-play {
+                    i {
+                        font-size: 50px;
+                    }
+                }
+                button {
+                    margin: 0px 12px;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    i {
+                        color: #297F87;
+                        font-size: 32px;
+                        &:hover {
+                            color: #71DFE7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .attribution {
+        font-size: 12px;
+        color: #009DAE;
+    }
+}
+.music-container.play {
+    .img-container {
+        img {
+            animation-play-state: running;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

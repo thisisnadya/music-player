@@ -1,0 +1,137 @@
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#71DFE7), to(#C2FFF9));
+  background-image: linear-gradient(#71DFE7, #C2FFF9);
+}
+
+.music-container {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.music-container .card {
+  -webkit-box-shadow: 0 20px 18px 0 #009dae;
+          box-shadow: 0 20px 18px 0 #009dae;
+  width: 320px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.music-container .card .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.music-container .card .img-container img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.music-container .card .img-container::after {
+  content: '';
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.music-container .card .card-body .song-information .progress-line {
+  background-color: #D4ECDD;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 30px 0px 10px 0px;
+  height: 5px;
+  width: 100%;
+}
+
+.music-container .card .card-body .song-information .progress-line .progress {
+  background-color: #1DB9C3;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: width 0.1s linear;
+  transition: width 0.1s linear;
+}
+
+.music-container .card .card-body .action-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto 30px auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.music-container .card .card-body .action-button .action-btn-play i {
+  font-size: 50px;
+}
+
+.music-container .card .card-body .action-button button {
+  margin: 0px 12px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.music-container .card .card-body .action-button button i {
+  color: #297F87;
+  font-size: 32px;
+}
+
+.music-container .card .card-body .action-button button i:hover {
+  color: #71DFE7;
+}
+
+.music-container .attribution {
+  font-size: 12px;
+  color: #009DAE;
+}
+
+.music-container.play .img-container img {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
