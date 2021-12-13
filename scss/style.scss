@@ -2,13 +2,21 @@ body {
     background-image: linear-gradient(#71DFE7, #C2FFF9);
 }
 .music-container {
-    min-height: 100vh;
     overflow: hidden;
+    background-color: blanchedalmond;
+    min-height: 100vh;
+    padding-top: 50px;
+    @media (min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+    }
     .card {
         box-shadow: 0 20px 18px 0 rgba(0, 157, 174, 1);
-        width: 320px;
-        margin: auto;
-        margin-top: 40px;
+        max-width: 100%;
+        height: 100%;
+        @media (min-width: 992px) {
+            width: 40%;
+        }
         .img-container {
             display: flex;
             justify-content: center;
@@ -53,9 +61,15 @@ body {
                     }
                 }
             }
+            #add-to-playlist {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
             .action-button {
                 display: flex;
-                margin: 50px auto 30px auto;
+                margin: 30px auto 10px auto;
                 justify-content: center;
                 align-items: center;
                 .action-btn-play {
@@ -79,9 +93,27 @@ body {
             }
         }
     }
-    .attribution {
-        font-size: 12px;
-        color: #009DAE;
+    .playlists {
+        width: 100%;
+        margin-top: 50px;
+        border: 1px solid black;
+        height: 100%;
+        padding: 10px;
+        @media (min-width: 992px) {
+            width: 50%;
+            margin-top: 0px;;
+        }
+        .playlist-wrapper {
+            margin: 15px 0px;
+            .playlist {
+                border: 1px solid black;
+            }
+            .kotak {
+                width: 150px;
+                height: 150px;
+                background-color: cadetblue;
+            }
+        }
     }
 }
 .music-container.play {
@@ -92,6 +124,10 @@ body {
     }
 }
 
+.attribution {
+    font-size: 12px;
+    color: #009DAE;
+}
 @keyframes rotate {
     from {
         transform: rotate(0deg);

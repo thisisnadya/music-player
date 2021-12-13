@@ -1,5 +1,7 @@
 const musicContainer = document.querySelector('.music-container');
 const progressContainer = document.querySelector('.progress-line');
+const addToPlaylist = document.getElementById('add-to-playlist');
+const playlistWrapper = document.querySelector('.playlist-wrapper');
 let playButton = document.querySelector('#play');
 let prevButton = document.querySelector('#prev');
 let nextButton = document.querySelector('#next');
@@ -96,4 +98,6 @@ nextButton.addEventListener('click', nextSong);
 audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 audio.addEventListener('ended', nextSong);
+
+
 
