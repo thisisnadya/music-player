@@ -80,6 +80,22 @@ function setProgress(e){
     audio.currentTime = (clickX / width) * duration;
 }
 
+function addSongToPlaylist(){
+    const playlistItem = document.createElement('div');
+    playlistItem.classList.add('playlist');
+    playlistItem.classList.add('container');
+    playlistItem.classList.add('my-2');
+    playlistWrapper.appendChild(playlistItem);
+
+    const songTitle = document.createElement('h5');
+    songTitle.innerText = 'test title';
+    playlistItem.appendChild(songTitle);
+
+    const singer = document.createElement('p');
+    singer.innerText = 'hey';
+    playlistItem.appendChild(singer);
+}
+
 //event listener
 playButton.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play');
@@ -98,6 +114,7 @@ nextButton.addEventListener('click', nextSong);
 audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 audio.addEventListener('ended', nextSong);
+addToPlaylist.addEventListener('click', addSongToPlaylist);
 
 
 
