@@ -36,8 +36,6 @@ function playSong(e){
         target.classList.add('fa-pause');
     }
     audio.play();
-
-    console.log(target.classList[1]);
 }
 
 function pauseSong(e){
@@ -46,7 +44,6 @@ function pauseSong(e){
     target.classList.remove('fa-pause');
     target.classList.add('fa-play');
     audio.pause();
-    console.log(target);
 }
 
 function prevSong(e) {
