@@ -171,6 +171,10 @@ body {
   color: #297F87;
 }
 
+.music-container .playlists .playlist-wrapper .playlist button i:hover {
+  color: #71DFE7;
+}
+
 .music-container.play .img-container img {
   -webkit-animation-play-state: running;
           animation-play-state: running;

@@ -117,6 +117,9 @@ body {
                     i {
                         font-size: 22px;
                         color: #297F87;
+                        &:hover {
+                            color: #71DFE7;
+                        }
                     }
                 }
             }
