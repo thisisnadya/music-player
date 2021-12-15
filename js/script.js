@@ -8,6 +8,7 @@ let nextButton = document.querySelector('#next');
 let audio = document.querySelector('#audio');
 let progress = document.querySelector('.progress');
 let title = document.querySelector('#title');
+let singer = document.querySelector('#singer');
 let imageCover = document.querySelector('#img-cover');
 
 //Song title
@@ -88,12 +89,12 @@ function addSongToPlaylist(){
     playlistWrapper.appendChild(playlistItem);
 
     const songTitle = document.createElement('h5');
-    songTitle.innerText = 'test title';
+    songTitle.innerText = title.innerText;
     playlistItem.appendChild(songTitle);
 
-    const singer = document.createElement('p');
-    singer.innerText = 'hey';
-    playlistItem.appendChild(singer);
+    const theSinger = document.createElement('p');
+    theSinger.innerText = singer.innerText;
+    playlistItem.appendChild(theSinger);
 }
 
 //event listener

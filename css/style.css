@@ -5,7 +5,6 @@ body {
 
 .music-container {
   overflow: hidden;
-  background-color: blanchedalmond;
   min-height: 100vh;
   padding-top: 50px;
 }
@@ -150,12 +149,6 @@ body {
 
 .music-container .playlists .playlist-wrapper .playlist {
   border: 1px solid black;
-}
-
-.music-container .playlists .playlist-wrapper .kotak {
-  width: 150px;
-  height: 150px;
-  background-color: cadetblue;
 }
 
 .music-container.play .img-container img {
