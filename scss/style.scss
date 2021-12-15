@@ -106,6 +106,19 @@ body {
             margin: 15px 0px;
             .playlist {
                 border: 1px solid black;
+                display: flex;
+                .song-info {
+                    flex: 1;
+                }
+                button {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    i {
+                        font-size: 22px;
+                        color: #297F87;
+                    }
+                }
             }
         }
     }

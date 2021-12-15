@@ -149,6 +149,26 @@ body {
 
 .music-container .playlists .playlist-wrapper .playlist {
   border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.music-container .playlists .playlist-wrapper .playlist .song-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.music-container .playlists .playlist-wrapper .playlist button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.music-container .playlists .playlist-wrapper .playlist button i {
+  font-size: 22px;
+  color: #297F87;
 }
 
 .music-container.play .img-container img {

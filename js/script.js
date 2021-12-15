@@ -2,7 +2,8 @@ const musicContainer = document.querySelector('.music-container');
 const progressContainer = document.querySelector('.progress-line');
 const addToPlaylist = document.getElementById('add-to-playlist');
 const playlistWrapper = document.querySelector('.playlist-wrapper');
-let playButton = document.querySelector('#play');
+const playPlaylist = document.querySelector('#play-playlist');
+let playButton = document.querySelectorAll('#play');
 let prevButton = document.querySelector('#prev');
 let nextButton = document.querySelector('#next');
 let audio = document.querySelector('#audio');
@@ -27,23 +28,28 @@ function loadSong(song){
     imageCover.src = `img/${song}.jpg`;
 }
 
-function playSong(){
+function playSong(e){
     musicContainer.classList.add('play');
-    playButton.querySelector('i.fas').classList.remove('fa-play');
-    playButton.querySelector('i.fas').classList.add('fa-pause');
-
+    const target = e.target;
+    if(target.classList[1] !== 'fa-forward' && target.classList[1] !== 'fa-backward'){
+        target.classList.remove('fa-play');
+        target.classList.add('fa-pause');
+    }
     audio.play();
+
+    console.log(target.classList[1]);
 }
 
-function pauseSong(){
+function pauseSong(e){
     musicContainer.classList.remove('play');
-    playButton.querySelector('i.fas').classList.remove('fa-pause');
-    playButton.querySelector('i.fas').classList.add('fa-play');
-
+    const target = e.target;
+    target.classList.remove('fa-pause');
+    target.classList.add('fa-play');
     audio.pause();
+    console.log(target);
 }
 
-function prevSong() {
+function prevSong(e) {
     songIndex--;
 
     if(songIndex < 0){
@@ -51,10 +57,10 @@ function prevSong() {
     }
 
     loadSong(songs[songIndex]);
-    playSong();
+    playSong(e);
 }
 
-function nextSong() {
+function nextSong(e) {
     songIndex++;
 
     if(songIndex > songs.length-1){
@@ -62,7 +68,7 @@ function nextSong() {
     }
 
     loadSong(songs[songIndex]);
-    playSong();
+    playSong(e);
 }
 
 function updateProgress(e){
@@ -97,16 +103,20 @@ function addSongToPlaylist(){
     playlistItem.appendChild(theSinger);
 }
 
-//event listener
-playButton.addEventListener('click', () => {
+function checkPlay(e) {
     const isPlaying = musicContainer.classList.contains('play');
 
     if(isPlaying){
-        pauseSong();
+        pauseSong(e);
     }
     else {
-        playSong();
+        playSong(e);
     }
+}
+
+//event listener
+playButton.forEach(item => {
+    item.addEventListener('click', checkPlay);
 });
 
 //change song
