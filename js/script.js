@@ -2,7 +2,6 @@ const musicContainer = document.querySelector('.music-container');
 const progressContainer = document.querySelector('.progress-line');
 const addToPlaylist = document.getElementById('add-to-playlist');
 const playlistWrapper = document.querySelector('.playlist-wrapper');
-const playPlaylist = document.querySelectorAll('#play-playlist');
 let playButton = document.querySelector('#play');
 let prevButton = document.querySelector('#prev');
 let nextButton = document.querySelector('#next');
@@ -119,6 +118,20 @@ function checkPlay() {
     }
 }
 
+function actionPlaylist(e) {
+    const item = e.target;
+    if(item.classList[1] === 'fa-play'){
+        item.classList.remove('fa-play');
+        item.classList.add('fa-pause');
+    }
+    else {
+        item.classList.remove('fa-pause');
+        item.classList.add('fa-play');
+    }
+    checkPlay();
+}
+
+
 //event listener
 playButton.addEventListener('click', checkPlay);
 
@@ -129,6 +142,7 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 audio.addEventListener('ended', nextSong);
 addToPlaylist.addEventListener('click', addSongToPlaylist);
+playlistWrapper.addEventListener('click', actionPlaylist);
 
 
 
