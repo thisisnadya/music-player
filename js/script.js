@@ -91,13 +91,23 @@ function addSongToPlaylist(){
     playlistItem.classList.add('my-2');
     playlistWrapper.appendChild(playlistItem);
 
+    const songInfo = document.createElement('div');
+    songInfo.classList.add('song-info');
+    playlistItem.appendChild(songInfo);
+
     const songTitle = document.createElement('h5');
     songTitle.innerText = title.innerText;
-    playlistItem.appendChild(songTitle);
+    songInfo.appendChild(songTitle);
 
     const theSinger = document.createElement('p');
     theSinger.innerText = singer.innerText;
-    playlistItem.appendChild(theSinger);
+    songInfo.appendChild(theSinger);
+
+    const actionButton = document.createElement('button');
+    actionButton.classList.add('action-btn-play');
+    actionButton.setAttribute('id', 'play');
+    actionButton.innerHTML = '<i class="fas fa-play"></i>';
+    playlistItem.appendChild(actionButton);
 }
 
 function checkPlay(e) {
